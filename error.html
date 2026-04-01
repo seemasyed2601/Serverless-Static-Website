@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;800&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            gap: 1.5rem;
+        }
+        .error-code {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(6rem, 20vw, 12rem);
+            font-weight: 800;
+            color: var(--accent);
+            opacity: 0.15;
+            line-height: 1;
+            user-select: none;
+        }
+        .error-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--text-1);
+        }
+        .error-msg { color: var(--text-2); max-width: 420px; }
+        .error-wrap { position: relative; }
+        .error-wrap .error-title { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">⬡ ServerlessHQ</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+        </ul>
+        <button class="nav-cta" onclick="location.href='index.html'">Go Home</button>
+    </nav>
+
+    <div class="error-page">
+        <div class="error-wrap">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+        </div>
+        <p class="error-msg">
+            The page you're looking for doesn't exist or has been moved.
+            Check the URL or head back to the homepage.
+        </p>
+        <a href="index.html"><button class="btn-primary">← Back to Home</button></a>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Serverless Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Floating nav -->
+    <nav class="navbar">
+        <div class="nav-logo">⬡ ServerlessHQ</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta">Get Started</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <span class="hero-badge">☁ Hosted on AWS S3 + CloudFront</span>
+            <h1 class="hero-title">
+                Build Fast.<br>
+                <span class="accent">Deploy Faster.</span>
+            </h1>
+            <p class="hero-subtitle">
+                A fully serverless static website — blazing performance, global delivery,
+                zero backend complexity.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-primary">Explore the Project</button>
+                <button class="btn-ghost">View on GitHub ↗</button>
+            </div>
+        </div>
+        <div class="hero-image-wrap">
+            <!-- REPLACE: Use a high-resolution cloud/infrastructure dashboard screenshot (1200×800px, PNG/WebP) -->
+            <div class="image-placeholder hero-img-placeholder">
+                <span>📸</span>
+                <p>Hero Image<br><small>cloud-dashboard.webp (1200×800px)</small></p>
+            </div>
+            <div class="hero-card card-1">⚡ 99.9% Uptime</div>
+            <div class="hero-card card-2">🌍 Global CDN</div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat"><span class="stat-num">0ms</span><span class="stat-label">Server Cold Start</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">200+</span><span class="stat-label">CloudFront Edge Locations</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Backend Cost</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100</span><span class="stat-label">Lighthouse Score</span></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-text">
+            <span class="section-tag">// About This Project</span>
+            <h2>What Is a Serverless Static Site?</h2>
+            <p>
+                A serverless static website serves pre-built HTML, CSS, and JavaScript files directly
+                from object storage like <strong>Amazon S3</strong>, distributed globally via
+                <strong>CloudFront CDN</strong> — no web server, no runtime, no maintenance overhead.
+            </p>
+            <p>
+                Files are cached at edge locations worldwide, giving every visitor
+                near-instant load times regardless of geography.
+            </p>
+            <ul class="about-list">
+                <li>✦ No server management or patching</li>
+                <li>✦ Scales automatically to millions of requests</li>
+                <li>✦ SSL/HTTPS included via ACM</li>
+                <li>✦ Custom domain via Route 53</li>
+            </ul>
+        </div>
+        <div class="about-image-wrap">
+            <!-- REPLACE: Architecture diagram showing S3 → CloudFront → User flow (800×600px, PNG/SVG) -->
+            <div class="image-placeholder about-img-placeholder">
+                <span>🏗</span>
+                <p>Architecture Diagram<br><small>aws-architecture.png (800×600px)</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <span class="section-tag center">// Core Features</span>
+        <h2 class="features-title">Everything You Need</h2>
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <!-- REPLACE: Icon/illustration for S3 storage (200×200px, SVG/PNG) -->
+                <div class="image-placeholder feature-img-placeholder">
+                    <span>🪣</span>
+                    <p><small>s3-icon.svg (200×200px)</small></p>
+                </div>
+                <h3>S3 Static Hosting</h3>
+                <p>Upload your HTML, CSS, and JS files to an S3 bucket configured for static website hosting.</p>
+            </div>
+
+            <div class="feature-card featured">
+                <!-- REPLACE: CloudFront CDN globe graphic (200×200px, SVG/PNG) -->
+                <div class="image-placeholder feature-img-placeholder">
+                    <span>🌐</span>
+                    <p><small>cloudfront-globe.svg (200×200px)</small></p>
+                </div>
+                <h3>CloudFront CDN</h3>
+                <p>Content delivered from the nearest edge location, ensuring sub-50ms load times globally.</p>
+                <span class="badge">Core</span>
+            </div>
+
+            <div class="feature-card">
+                <!-- REPLACE: HTTPS lock/security icon (200×200px, SVG/PNG) -->
+                <div class="image-placeholder feature-img-placeholder">
+                    <span>🔒</span>
+                    <p><small>https-secure.svg (200×200px)</small></p>
+                </div>
+                <h3>HTTPS & SSL</h3>
+                <p>Free SSL certificates via AWS Certificate Manager, auto-renewed, zero configuration.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Deployment Steps -->
+    <section class="steps">
+        <span class="section-tag center">// How to Deploy</span>
+        <h2 class="features-title">Up in 4 Steps</h2>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-body">
+                    <h4>Create S3 Bucket</h4>
+                    <p>Name it after your domain, enable static website hosting, set index.html as the root document.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-body">
+                    <h4>Upload Files</h4>
+                    <p>Upload your entire project folder. Set public-read permissions or use a bucket policy.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-body">
+                    <h4>Create CloudFront Distribution</h4>
+                    <p>Point it to your S3 bucket. Set default root object to index.html.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">04</div>
+                <div class="step-body">
+                    <h4>Go Live</h4>
+                    <p>Use your CloudFront URL or configure a custom domain via Route 53.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <span class="section-tag center">// Contact</span>
+            <h2>Get In Touch</h2>
+            <p>Have questions about this project or serverless architecture?</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" class="form-input">
+                <input type="email" placeholder="Your Email" class="form-input">
+                <textarea placeholder="Your Message" class="form-input form-textarea"></textarea>
+                <button class="btn-primary" id="submitBtn">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">⬡ ServerlessHQ</div>
+            <p class="footer-text">Built with HTML, CSS & JS · Hosted on AWS S3 + CloudFront</p>
+            <p class="footer-copy">© 2025 My Student Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- error.html hint comment -->
+    <!-- Remember to also create error.html in your root for S3 error handling -->
+
+    <script src="js/script.js"></script>
+</body>
+</html>
