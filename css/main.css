@@ -1,3 +1,74 @@
+/* ============================================================
+   main.css — Serverless Static Website
+   Theme: Dark editorial with electric-teal accents
+   Fonts: Syne (display) + DM Sans (body)
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+    --bg:         #0a0c10;
+    --bg-2:       #0f1218;
+    --bg-card:    #13161d;
+    --border:     rgba(255,255,255,0.07);
+    --accent:     #00e5c3;
+    --accent-dim: rgba(0,229,195,0.12);
+    --accent-glow:rgba(0,229,195,0.25);
+    --text-1:     #f0f2f5;
+    --text-2:     #8b95a5;
+    --text-3:     #4e5766;
+    --white:      #ffffff;
+    --radius-sm:  8px;
+    --radius-md:  16px;
+    --radius-lg:  24px;
+    --shadow:     0 8px 40px rgba(0,0,0,0.5);
+    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background-color: var(--bg);
+    color: var(--text-1);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.2rem; font-weight: 700; }
+h4 { font-size: 1rem; font-weight: 700; }
+p  { color: var(--text-2); }
+
+.accent { color: var(--accent); }
+
+/* ---------- Section Tags ---------- */
+.section-tag {
+    display: inline-block;
+    font-family: 'DM Sans', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
 .section-tag.center { display: block; text-align: center; }
 
 /* ---------- Buttons ---------- */
@@ -83,78 +154,7 @@
     font-size: 1rem;
     color: var(--accent);
     letter-spacing: 0.04em;
-}/* ============================================================
-   main.css — Serverless Static Website
-   Theme: Dark editorial with electric-teal accents
-   Fonts: Syne (display) + DM Sans (body)
-   ============================================================ */
-
-/* ---------- CSS Variables ---------- */
-:root {
-    --bg:         #0a0c10;
-    --bg-2:       #0f1218;
-    --bg-card:    #13161d;
-    --border:     rgba(255,255,255,0.07);
-    --accent:     #00e5c3;
-    --accent-dim: rgba(0,229,195,0.12);
-    --accent-glow:rgba(0,229,195,0.25);
-    --text-1:     #f0f2f5;
-    --text-2:     #8b95a5;
-    --text-3:     #4e5766;
-    --white:      #ffffff;
-    --radius-sm:  8px;
-    --radius-md:  16px;
-    --radius-lg:  24px;
-    --shadow:     0 8px 40px rgba(0,0,0,0.5);
-    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* ---------- Reset ---------- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    background-color: var(--bg);
-    color: var(--text-1);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-/* ---------- Scrollbar ---------- */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
-
-/* ---------- Typography ---------- */
-h1, h2, h3, h4, .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-}
-h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: 1.2rem; font-weight: 700; }
-h4 { font-size: 1rem; font-weight: 700; }
-p  { color: var(--text-2); }
-
-.accent { color: var(--accent); }
-
-/* ---------- Section Tags ---------- */
-.section-tag {
-    display: inline-block;
-    font-family: 'DM Sans', monospace;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    opacity: 0.8;
-}
-
 
 .nav-links {
     list-style: none;
@@ -488,6 +488,94 @@ p  { color: var(--text-2); }
 }
 .footer-text { font-size: 0.8rem; }
 .footer-copy { font-size: 0.75rem; color: var(--text-3); }
+
+/* ---------- Hero Image ---------- */
+.hero-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+/* ---------- Architecture Diagram ---------- */
+.arch-diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    width: 100%;
+}
+
+/* ---------- Feature Images ---------- */
+.feature-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Footer Link ---------- */
+.footer-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.footer-link:hover { opacity: 0.8; }
+
+/* ---------- Toast Popup ---------- */
+.toast {
+    position: fixed;
+    bottom: -120px;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.2rem;
+    z-index: 9999;
+    box-shadow: 0 8px 40px rgba(0,229,195,0.2);
+    transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 280px;
+}
+.toast.show { bottom: 2rem; }
+.toast-icon {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.toast-text strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-1);
+}
+.toast-text p {
+    font-size: 0.78rem;
+    color: var(--text-2);
+    margin: 0;
+}
+.toast-close {
+    background: none;
+    border: none;
+    color: var(--text-3);
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: auto;
+    padding: 0.2rem;
+    transition: var(--transition);
+}
+.toast-close:hover { color: var(--text-1); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
